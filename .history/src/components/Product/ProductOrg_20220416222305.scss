@@ -1,0 +1,27 @@
+.productOrg {
+  padding-bottom: 40px;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 40px;
+  }
+  &-item {
+    position: relative;
+    cursor: pointer;
+    &:hover .productOrg-name {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &-name {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s linear;
+  }
+}

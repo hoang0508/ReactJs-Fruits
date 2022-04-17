@@ -1,0 +1,30 @@
+.header {
+  &-contact {
+    border-bottom: 1px solid #eee;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+  }
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 0 25px &--add {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+    }
+    &--gmail {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+    }
+  }
+  &-social {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+  }
+}

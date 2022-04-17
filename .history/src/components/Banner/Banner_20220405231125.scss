@@ -1,0 +1,36 @@
+@import "../../index.scss";
+.banner {
+  min-height: 100vh;
+  padding: 0 0 40px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  &-content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+  }
+  &-heading {
+    color: $primary-color;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  &-title {
+    max-width: 600px;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+  &-desc {
+    max-width: 700px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,14 @@
+.banner {
+  min-height: 100vh;
+  padding: 0 0 40px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  &-content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+  }
+}

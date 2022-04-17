@@ -1,0 +1,9 @@
+.banner-crops {
+  min-height: 100vh;
+  padding-top: 100px;
+  &--content {
+    max-width: 800px;
+    background-color: #fff;
+    padding: 50px;
+  }
+}

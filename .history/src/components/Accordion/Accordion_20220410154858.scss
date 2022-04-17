@@ -1,0 +1,20 @@
+@import "../../index.scss";
+.accordion {
+  max-width: 500px;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  &-content {
+    border: 1px solid $primary-color;
+    margin-top: 15px;
+    padding: 5px 10px;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+}

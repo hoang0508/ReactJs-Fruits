@@ -1,0 +1,34 @@
+@import "../../index.scss";
+
+.product {
+  margin-top: 80px;
+  padding-bottom: 100px;
+  &-heading {
+    margin-bottom: 50px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0 40px;
+  }
+  &-item {
+    position: relative;
+  }
+  &-images {
+    height: 250px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-seo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    color: $text-color--tx;
+    padding: 8px 15px;
+    border-radius: 8px;
+  }
+}

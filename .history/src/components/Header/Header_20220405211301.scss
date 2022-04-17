@@ -1,0 +1,15 @@
+.header {
+  &-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-info {
+    display: flex;
+    align-items: center;
+  }
+  &-social {
+    display: flex;
+    align-items: center;
+  }
+}
