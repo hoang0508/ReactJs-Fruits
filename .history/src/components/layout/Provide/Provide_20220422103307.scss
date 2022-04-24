@@ -1,0 +1,13 @@
+.provide {
+  &-list {
+    display: grid;
+  }
+  &-images {
+    height: 400px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

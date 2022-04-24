@@ -1,0 +1,20 @@
+.subscribe {
+  margin-bottom: 100px;
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+  &-content {
+    width: 60%;
+    .page-center {
+      max-width: 700px;
+      text-align: left;
+    }
+    .page-desc {
+      text-align: left;
+    }
+  }
+  &-email {
+    width: 60%;
+  }
+}

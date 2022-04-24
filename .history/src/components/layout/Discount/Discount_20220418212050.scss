@@ -1,0 +1,16 @@
+.discount {
+  min-height: 100vh;
+  position: relative;
+  padding: 150px 0;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--left {
+      width: 60%;
+    }
+    &--right {
+      width: 40%;
+    }
+  }
+}

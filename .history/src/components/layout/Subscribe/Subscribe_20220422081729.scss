@@ -1,0 +1,14 @@
+.subscribe {
+  &-container {
+    display: flex;
+  }
+  &-content {
+    .page-center {
+      max-width: 700px;
+      text-align: left;
+    }
+    .page-desc {
+      text-align: left;
+    }
+  }
+}

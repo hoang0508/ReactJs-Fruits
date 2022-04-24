@@ -1,0 +1,27 @@
+@import "../../../index.scss";
+.banner-feedback {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  &--heading {
+    padding: 40px 0;
+    .page-heading {
+      color: #fff;
+      font-weight: 600;
+    }
+    .page-desc {
+      color: #fff;
+    }
+  }
+  &--list {
+    max-width: 700px;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 auto;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

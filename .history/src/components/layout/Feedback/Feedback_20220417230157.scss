@@ -1,0 +1,40 @@
+@import "../../../index.scss";
+.banner-feedback {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  &--heading {
+    padding: 40px 0;
+    .page-heading {
+      color: #fff;
+      font-weight: 600;
+    }
+    .page-desc {
+      color: #fff;
+    }
+  }
+  &--list {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0 auto;
+    background-color: $secondary-color;
+    border-radius: 20px;
+  }
+  &--item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &--images {
+    width: 150px;
+    height: 150px;
+    border-radius: 100rem;
+  }
+  &--content {
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
