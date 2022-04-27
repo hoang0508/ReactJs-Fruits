@@ -1,0 +1,10 @@
+@import "../../index.scss";
+.footer {
+  background-color: $bg-footer;
+  padding: 80px 0;
+  &-list {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 0 40px;
+  }
+}

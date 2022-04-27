@@ -1,0 +1,15 @@
+.modalP {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  &-content {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

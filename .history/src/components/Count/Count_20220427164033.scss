@@ -1,0 +1,10 @@
+@import "../../index.scss";
+.count {
+  display: flex;
+  align-items: center;
+  background-color: $bgr-color;
+  &-value {
+    width: 100px;
+    text-align: center;
+  }
+}

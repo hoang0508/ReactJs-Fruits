@@ -1,0 +1,14 @@
+@import "../../index.scss";
+.count {
+  display: flex;
+  align-items: center;
+  background-color: $bgr-color;
+  padding: 10px;
+  cursor: pointer;
+  &-value {
+    width: 100px;
+    text-align: center;
+    background: inherit;
+    font-size: 18px;
+  }
+}
