@@ -1,0 +1,11 @@
+@import "../../index.scss";
+.down {
+  background-color: $text-color--tx;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 100rem;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+}

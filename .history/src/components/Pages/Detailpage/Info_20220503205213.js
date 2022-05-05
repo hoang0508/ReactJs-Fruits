@@ -1,0 +1,20 @@
+import React from "react";
+import "./Info.scss";
+const Info = ({ item }) => {
+  return (
+    <div className="info">
+      <div className="container">
+        <div className="info-tab">
+          <div className="info-tab--title">Description</div>
+          <div className="info-tab--title">Review</div>
+        </div>
+        <div className="info-content">
+          <div className="info-content--desc">{item.content}</div>
+          <div className="info-content--review"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Info;

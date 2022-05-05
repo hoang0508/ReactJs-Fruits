@@ -1,0 +1,19 @@
+@import "../../../index.scss";
+.info {
+  padding: 20px 0 40px;
+  &-tab {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &--title {
+      border: 1px solid $border-color;
+      padding: 15px 30px;
+    }
+  }
+  &-content {
+    max-width: 800px;
+    border: 1px solid $border-color;
+  }
+}

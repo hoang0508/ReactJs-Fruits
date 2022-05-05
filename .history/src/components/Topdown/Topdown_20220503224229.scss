@@ -1,0 +1,14 @@
+@import "../../index.scss";
+.down {
+  background-color: $text-color--tx;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+}

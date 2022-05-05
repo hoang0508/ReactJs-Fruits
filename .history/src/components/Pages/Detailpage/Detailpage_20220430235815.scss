@@ -1,0 +1,10 @@
+.details {
+  &-banner {
+    min-height: 400px;
+    position: relative;
+    z-index: 0;
+  }
+  &-list {
+    margin: 40px 0;
+  }
+}
