@@ -1,11 +1,6 @@
-import {
-  Children,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useHookAPI } from "../../hooks/useHookAPI";
+import useLocalStorage from "../../hooks/useLocalStrorage";
 
 const ImageContext = createContext(undefined);
 
@@ -21,7 +16,30 @@ const ImageProvider = ({ images, children, ...props }) => {
       setCurrentImage(images);
     }
   }, [images]);
-  const values = { imgThumb, currentImage, setCurrentImage };
+
+  // Cart
+  // useLocalStrorage
+  const { storedValue, setValue } = useLocalStorage("cartValue", []);
+  // CartItem
+  const [cartItem, setCartItem] = useState(storedValue);
+  const addToCart = (newItem) => {
+    setCartItem((prevItem) => {
+      const isExisted = prevItem.some((item) => item.id === newItem.id);
+      if (isExisted) {
+        setValue([...prevItem]);
+        return [...prevItem];
+      }
+      setValue([...prevItem, newItem]);
+      return [...prevItem, newItem];
+    });
+  };
+  const values = {
+    imgThumb,
+    currentImage,
+    setCurrentImage,
+    cartItem,
+    addToCart,
+  };
 
   return (
     <ImageContext.Provider value={values} {...props}>
