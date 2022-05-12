@@ -24,7 +24,7 @@ const SignUpPageStyles = styled.div`
 `;
 
 const SignUpPage = () => {
-  // TogglePassowd
+  // TogglePassowrd
   const [togglePassword, setTogglePassWord] = useState(false);
   const handleTogglePassowd = () => {
     setTogglePassWord(!togglePassword);

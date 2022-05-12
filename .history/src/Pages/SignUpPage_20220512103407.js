@@ -1,9 +1,8 @@
 import { Button } from "components/button";
 import { Field } from "components/Field";
-import { IconClose, IconOpen } from "components/icon";
 import { Input } from "components/Input";
 import { Label } from "components/label";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const SignUpPageStyles = styled.div`
@@ -24,11 +23,6 @@ const SignUpPageStyles = styled.div`
 `;
 
 const SignUpPage = () => {
-  // TogglePassowd
-  const [togglePassword, setTogglePassWord] = useState(false);
-  const handleTogglePassowd = () => {
-    setTogglePassWord(!togglePassword);
-  };
   return (
     <SignUpPageStyles>
       <div className="signup-content">
@@ -48,20 +42,24 @@ const SignUpPage = () => {
         </Field>
         <Field>
           <Label htmlFor="email">Email address</Label>
-          <Input name="email" type="email" placeholder="Enter your email" />
+          <Input name="email" type="text" placeholder="Enter your email" />
         </Field>
         <Field>
           <Label htmlFor="password">Password</Label>
-          <Input
-            name="password"
-            type={!togglePassword ? "password" : "text"}
-            placeholder="Enter your password"
-          >
-            {!togglePassword ? (
-              <IconClose onClick={handleTogglePassowd}></IconClose>
-            ) : (
-              <IconOpen onClick={handleTogglePassowd}></IconOpen>
-            )}
+          <Input name="password" type="text" placeholder="Enter your password">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+              <path
+                fillRule="evenodd"
+                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                clipRule="evenodd"
+              />
+            </svg>
           </Input>
         </Field>
         <Button

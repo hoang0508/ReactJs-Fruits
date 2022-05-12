@@ -1,9 +1,7 @@
-import { Button } from "components/button";
 import { Field } from "components/Field";
-import { IconClose, IconOpen } from "components/icon";
 import { Input } from "components/Input";
 import { Label } from "components/label";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const SignUpPageStyles = styled.div`
@@ -24,11 +22,6 @@ const SignUpPageStyles = styled.div`
 `;
 
 const SignUpPage = () => {
-  // TogglePassowd
-  const [togglePassword, setTogglePassWord] = useState(false);
-  const handleTogglePassowd = () => {
-    setTogglePassWord(!togglePassword);
-  };
   return (
     <SignUpPageStyles>
       <div className="signup-content">
@@ -48,30 +41,8 @@ const SignUpPage = () => {
         </Field>
         <Field>
           <Label htmlFor="email">Email address</Label>
-          <Input name="email" type="email" placeholder="Enter your email" />
+          <Input name="email" type="text" placeholder="Enter your email" />
         </Field>
-        <Field>
-          <Label htmlFor="password">Password</Label>
-          <Input
-            name="password"
-            type={!togglePassword ? "password" : "text"}
-            placeholder="Enter your password"
-          >
-            {!togglePassword ? (
-              <IconClose onClick={handleTogglePassowd}></IconClose>
-            ) : (
-              <IconOpen onClick={handleTogglePassowd}></IconOpen>
-            )}
-          </Input>
-        </Field>
-        <Button
-          type={"submit"}
-          maxWidth="200px"
-          height="56px"
-          className="button button--primary"
-        >
-          Sign Up
-        </Button>
       </form>
     </SignUpPageStyles>
   );

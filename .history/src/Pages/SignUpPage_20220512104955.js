@@ -24,7 +24,6 @@ const SignUpPageStyles = styled.div`
 `;
 
 const SignUpPage = () => {
-  // TogglePassowd
   const [togglePassword, setTogglePassWord] = useState(false);
   const handleTogglePassowd = () => {
     setTogglePassWord(!togglePassword);
@@ -54,7 +53,7 @@ const SignUpPage = () => {
           <Label htmlFor="password">Password</Label>
           <Input
             name="password"
-            type={!togglePassword ? "password" : "text"}
+            type={togglePassword ? "password" : "text"}
             placeholder="Enter your password"
           >
             {!togglePassword ? (
