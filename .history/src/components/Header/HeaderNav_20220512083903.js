@@ -1,32 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FaCartPlus } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import "./Header.scss";
-
-const menuLink = [
-  {
-    url: "/",
-    title: "Home",
-  },
-  {
-    url: "/page",
-    title: "Pages",
-  },
-  {
-    url: "/service",
-    title: "Service",
-  },
-  {
-    url: "/blog",
-    title: "Blog",
-  },
-  {
-    url: "/contact",
-    title: "Contact",
-  },
-];
-
 const HeaderNav = () => {
   // scroll Nav
   const navbar = useRef(null);
@@ -51,15 +26,31 @@ const HeaderNav = () => {
         </div>
         <div className="header-menu">
           <ul className="header-menu--list">
-            {menuLink &&
-              menuLink.length > 0 &&
-              menuLink.map((item) => (
-                <li className="header-menu--item" key={item.title}>
-                  <NavLink to={item.url} className="header-menu--link">
-                    {item.title}
-                  </NavLink>
-                </li>
-              ))}
+            <li className="header-menu--item">
+              <a href="#" className="header-menu--link">
+                Home
+              </a>
+            </li>
+            <li className="header-menu--item">
+              <a href="#" className="header-menu--link">
+                Pages
+              </a>
+            </li>
+            <li className="header-menu--item">
+              <a href="#" className="header-menu--link">
+                Service
+              </a>
+            </li>
+            <li className="header-menu--item">
+              <a href="#" className="header-menu--link">
+                Blog
+              </a>
+            </li>
+            <li className="header-menu--item">
+              <a href="#" className="header-menu--link">
+                Contact
+              </a>
+            </li>
           </ul>
           <div className="header-cart">
             <FaCartPlus className="header-cart--icon" />

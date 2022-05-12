@@ -1,7 +1,7 @@
 import React from "react";
 import PageLine from "../../PageLine";
 import "./Subscribe.scss";
-const Subscribe = ({ heading }) => {
+const Subscibe = ({ heading }) => {
   return (
     <section className="subscribe">
       <div className="container subscribe-container">
@@ -25,4 +25,4 @@ const Subscribe = ({ heading }) => {
   );
 };
 
-export default Subscribe;
+export default Subscibe;

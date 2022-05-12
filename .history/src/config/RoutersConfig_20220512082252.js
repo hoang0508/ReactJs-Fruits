@@ -1,4 +1,3 @@
-import NotFoundPage from "Pages/NotFoundPage.js";
 import React from "react";
 import { Route, Routes } from "react-router";
 import { ImageProvider } from "../components/context/Auth-Context.js";
@@ -35,7 +34,6 @@ const RoutersConfig = () => {
             }
           ></Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>
   );

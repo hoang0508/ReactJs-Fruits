@@ -34,8 +34,8 @@ const RoutersConfig = () => {
               </>
             }
           ></Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>
   );
