@@ -1,0 +1,19 @@
+@import url("../../index.scss");
+
+.contact {
+  &-banner {
+    min-height: 400px;
+    position: relative;
+  }
+  &-list {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 40px;
+  }
+  &-item {
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+  }
+}

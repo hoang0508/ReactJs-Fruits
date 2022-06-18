@@ -1,4 +1,4 @@
-import Contact from "Pages/Contact/Contact.js";
+import Contact from "Pages/Contact.js";
 import NotFoundPage from "Pages/NotFoundPage.js";
 import SignInPage from "Pages/SignInPage.js";
 import SignUpPage from "Pages/SignUpPage.js";

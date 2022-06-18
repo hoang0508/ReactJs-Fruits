@@ -1,4 +1,4 @@
-import Contact from "Pages/Contact/Contact.js";
+import Contact from "Pages/Contact.js";
 import NotFoundPage from "Pages/NotFoundPage.js";
 import SignInPage from "Pages/SignInPage.js";
 import SignUpPage from "Pages/SignUpPage.js";
@@ -37,10 +37,10 @@ const RoutersConfig = () => {
               </>
             }
           ></Route>
-          <Route path="/contact" element={<Contact />}></Route>
         </Route>
         <Route path="/sign-up" element={<SignUpPage />}></Route>
         <Route path="/sign-in" element={<SignInPage />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </AuthProvider>
