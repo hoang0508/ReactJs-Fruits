@@ -31,11 +31,10 @@ const Button = ({
   className = "",
   maxWidth = "",
   height = "",
-  onClick = () => {},
   ...props
 }) => {
   const { isLoading, to } = props;
-  console.log(onClick);
+  console.log("🚀 ~ file: Button.js ~ line 37 ~ props", props);
   if (typeof to === "string") {
     return (
       <NavLink to={to}>
@@ -44,7 +43,6 @@ const Button = ({
           maxWidth={maxWidth}
           height={height}
           className={className}
-          onClick={onClick}
         >
           {isLoading ? <div className="loading"></div> : children}
         </ButtonStyles>

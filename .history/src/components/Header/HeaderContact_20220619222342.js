@@ -56,12 +56,7 @@ const HeaderContact = () => {
               </div>
             )}
             <div>
-              <button
-                className="p-3 bg-orange-500 text-white rounded"
-                onClick={() => handleSignOut()}
-              >
-                Sign out
-              </button>
+              <button onClick={() => handleSignOut()}>Sign out</button>
             </div>
             <div className="header-social">
               <span>

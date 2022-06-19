@@ -117,8 +117,8 @@ const SignInPage = () => {
         <div>
           <Social onClick={handleSignInGoogle} />
         </div>
-        <div className="text-center mt-3">
-          Bạn chưa có tài khoản?<NavLink to="/sign-up">Sign up</NavLink>
+        <div>
+          Bạn chưa có tài khoản?<NavLink to="/signup">Sign up</NavLink>
         </div>
       </form>
     </Authentication>

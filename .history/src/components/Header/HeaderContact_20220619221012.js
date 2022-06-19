@@ -11,20 +11,12 @@ import {
   FaLinkedinIn,
   FaPinterestP,
 } from "react-icons/fa";
-import { toast } from "react-toastify";
 import "./Header.scss";
 
 const HeaderContact = () => {
   const { userInfo } = useAuthContext();
-  const handleSignOut = (e) => {
-    signOut(auth)
-      .then(() => {
-        toast.success("Sign out successfully!!");
-      })
-      .catch((error) => {
-        // An error happened.
-        toast.error("Sign out failed!!");
-      });
+  const handleSignOut = () => {
+    signOut(auth);
   };
   return (
     <header className="header">
@@ -56,12 +48,9 @@ const HeaderContact = () => {
               </div>
             )}
             <div>
-              <button
-                className="p-3 bg-orange-500 text-white rounded"
-                onClick={() => handleSignOut()}
-              >
+              <Button onClick={() => handleSignOut()} className={"button-sign"}>
                 Sign out
-              </button>
+              </Button>
             </div>
             <div className="header-social">
               <span>

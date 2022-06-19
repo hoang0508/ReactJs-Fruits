@@ -17,6 +17,7 @@ import "./Header.scss";
 const HeaderContact = () => {
   const { userInfo } = useAuthContext();
   const handleSignOut = (e) => {
+    e.preventDefault();
     signOut(auth)
       .then(() => {
         toast.success("Sign out successfully!!");
@@ -56,12 +57,9 @@ const HeaderContact = () => {
               </div>
             )}
             <div>
-              <button
-                className="p-3 bg-orange-500 text-white rounded"
-                onClick={() => handleSignOut()}
-              >
+              <Button onClick={() => handleSignOut()} className={"button-sign"}>
                 Sign out
-              </button>
+              </Button>
             </div>
             <div className="header-social">
               <span>

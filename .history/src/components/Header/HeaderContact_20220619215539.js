@@ -1,7 +1,6 @@
 import { Button } from "components/button";
 import { useAuthContext } from "components/context/Auth-Context";
 import { auth } from "Firebase-app/Firebase-config";
-import { signOut } from "firebase/auth";
 import React from "react";
 import {
   FaLocationArrow,
@@ -11,21 +10,9 @@ import {
   FaLinkedinIn,
   FaPinterestP,
 } from "react-icons/fa";
-import { toast } from "react-toastify";
 import "./Header.scss";
-
 const HeaderContact = () => {
   const { userInfo } = useAuthContext();
-  const handleSignOut = (e) => {
-    signOut(auth)
-      .then(() => {
-        toast.success("Sign out successfully!!");
-      })
-      .catch((error) => {
-        // An error happened.
-        toast.error("Sign out failed!!");
-      });
-  };
   return (
     <header className="header">
       <div className="header-contact">
@@ -41,7 +28,7 @@ const HeaderContact = () => {
               <span className="header-info--icon">
                 <FaMailBulk />
               </span>
-              <span>hh@gmail.com</span>
+              <span>{userInfo?.email || "hh@gmail.com"}</span>
             </div>
           </div>
           <div className="header-auth">
@@ -55,14 +42,6 @@ const HeaderContact = () => {
                 <strong>{userInfo?.displayName}</strong>
               </div>
             )}
-            <div>
-              <button
-                className="p-3 bg-orange-500 text-white rounded"
-                onClick={() => handleSignOut()}
-              >
-                Sign out
-              </button>
-            </div>
             <div className="header-social">
               <span>
                 <FaFacebookF />

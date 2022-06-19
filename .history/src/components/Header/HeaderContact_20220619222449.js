@@ -55,14 +55,7 @@ const HeaderContact = () => {
                 <strong>{userInfo?.displayName}</strong>
               </div>
             )}
-            <div>
-              <button
-                className="p-3 bg-orange-500 text-white rounded"
-                onClick={() => handleSignOut()}
-              >
-                Sign out
-              </button>
-            </div>
+            <Button onClick={() => handleSignOut()}>Sign out</Button>
             <div className="header-social">
               <span>
                 <FaFacebookF />

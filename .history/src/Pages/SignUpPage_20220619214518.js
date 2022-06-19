@@ -1,25 +1,26 @@
+import { Button } from "components/button";
+import { Field } from "components/Field";
+import { IconClose, IconOpen } from "components/icon";
+import { Input } from "components/Input";
+import { Label } from "components/label";
 import React, { useEffect, useState } from "react";
-import Authentication from "./Authentication";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Field } from "components/Field";
-import { Label } from "components/label";
-import { Input } from "components/Input";
-import { IconClose, IconOpen } from "components/icon";
-import { Button } from "components/button";
 import { toast } from "react-toastify";
-import { useAuthContext } from "components/context/Auth-Context";
+
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { db, auth } from "Firebase-app/Firebase-config";
+import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router";
-import { signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
-import { auth } from "Firebase-app/Firebase-config";
-import { GoogleAuthProvider } from "firebase/auth";
-import Social from "components/Social";
-import { NavLink } from "react-router-dom";
+import Authentication from "./Authentication";
+
+// Validation Yup
 const schema = yup.object({
+  fullname: yup.string().required("Please enter your fullName"),
   email: yup
     .string()
-    .required("Please enter your email address")
+    .required("Please enter your address")
     .email("Please enter valid email address"),
   password: yup
     .string()
@@ -27,15 +28,7 @@ const schema = yup.object({
     .min(8, "Your password must be at least 8 character or greater"),
 });
 
-const SignInPage = () => {
-  // context
-  const { userInfo } = useAuthContext();
-  console.log(
-    "🚀 ~ file: SignInPage.js ~ line 29 ~ SignInPage ~ userInfo",
-    userInfo
-  );
-  // Navigate
-  const navigate = useNavigate();
+const SignUpPage = () => {
   // React hook form
   const {
     handleSubmit,
@@ -45,24 +38,30 @@ const SignInPage = () => {
     mode: "onChange",
     resolver: yupResolver(schema),
   });
-  useEffect(() => {
-    document.title = "Sign In Page";
-    if (userInfo?.email) navigate("/");
-  }, [navigate, userInfo?.email]);
-  const handleSignIn = async (values) => {
+  // navigate
+  const navigate = useNavigate();
+  const handleSignUp = async (values) => {
     if (!isValid) return;
-    await signInWithEmailAndPassword(auth, values.email, values.password);
+    console.log(values);
+    // Đăng ký tài khoản
+    await createUserWithEmailAndPassword(auth, values.email, values.password);
+    // DisplayName, hiển thị name
+    await updateProfile(auth.currentUser, {
+      displayName: values.fullname,
+    });
+    // addDoc , collection
+    const userRef = collection(db, "user");
+    addDoc(userRef, {
+      fullname: values.fullname,
+      email: values.email,
+      password: values.password,
+    });
+    toast.success("Register SignUp Form!!!");
     navigate("/");
-    //
-    toast.success("SignIn Successfully!!!");
   };
-  // Google
-  const handleSignInGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    await signInWithRedirect(auth, provider);
-    if (userInfo?.email) navigate("/");
-    toast.success("Sign In google successfully!!!");
-  };
+  useEffect(() => {
+    document.title = "Sign Up Page";
+  }, []);
   // error, toastify
   useEffect(() => {
     const arrError = Object.values(errors);
@@ -75,9 +74,19 @@ const SignInPage = () => {
   const handleTogglePassowd = () => {
     setTogglePassWord(!togglePassword);
   };
+  // console.log(errors);
   return (
     <Authentication>
-      <form className="form" onSubmit={handleSubmit(handleSignIn)}>
+      <form className="form" onSubmit={handleSubmit(handleSignUp)}>
+        <Field>
+          <Label htmlFor="name">Fullname</Label>
+          <Input
+            name="fullname"
+            type="text"
+            placeholder="Enter your fullname"
+            control={control}
+          />
+        </Field>
         <Field>
           <Label htmlFor="email">Email address</Label>
           <Input
@@ -102,7 +111,7 @@ const SignInPage = () => {
             )}
           </Input>
         </Field>
-        <div className="text-center mx-auto mb-3">
+        <div className="mx-auto">
           <Button
             type={"submit"}
             maxWidth="200px"
@@ -110,19 +119,12 @@ const SignInPage = () => {
             className="button button--primary"
             isLoading={isSubmitting}
           >
-            Sign In
+            Sign Up
           </Button>
-        </div>
-        <div className="text-center mb-3 text-[18px] text-gray-300">Or</div>
-        <div>
-          <Social onClick={handleSignInGoogle} />
-        </div>
-        <div className="text-center mt-3">
-          Bạn chưa có tài khoản?<NavLink to="/sign-up">Sign up</NavLink>
         </div>
       </form>
     </Authentication>
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

@@ -15,7 +15,6 @@ import { signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
 import { auth } from "Firebase-app/Firebase-config";
 import { GoogleAuthProvider } from "firebase/auth";
 import Social from "components/Social";
-import { NavLink } from "react-router-dom";
 const schema = yup.object({
   email: yup
     .string()
@@ -113,13 +112,8 @@ const SignInPage = () => {
             Sign In
           </Button>
         </div>
-        <div className="text-center mb-3 text-[18px] text-gray-300">Or</div>
-        <div>
-          <Social onClick={handleSignInGoogle} />
-        </div>
-        <div className="text-center mt-3">
-          Bạn chưa có tài khoản?<NavLink to="/sign-up">Sign up</NavLink>
-        </div>
+        <div className="text-center">Or</div>
+        <Social />
       </form>
     </Authentication>
   );
