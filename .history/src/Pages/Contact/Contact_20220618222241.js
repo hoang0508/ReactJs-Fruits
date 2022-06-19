@@ -3,7 +3,6 @@ import bannerCart from "../../assets/img/page-banner-3.jpg";
 import "./Contact.scss";
 import { FaMailBulk, FaMapMarkerAlt, FaHeadphones } from "react-icons/fa";
 import FormUseHook from "components/Form/FormUseHook";
-import PageLine from "components/PageLine";
 const dataContact = [
   {
     id: 1,
@@ -49,20 +48,13 @@ const Contact = () => {
         </div>
       </div>
       <div className="contact-maps">
-        <iframe
+        {/* <iframe
           width="100%"
           height="500"
           border="0"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6575906466296!2d105.78278231429816!3d21.046382392553813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abb158a2305d%3A0x5c357d21c785ea3d!2zxJDhuqFpIGjhu41jIMSQaeG7h24gTOG7sWM!5e0!3m2!1svi!2s!4v1620222558644!5m2!1svi!2s"
           allowfullscreen
-        ></iframe>
-      </div>
-      <div className="mt-4">
-        <PageLine heading="Ready To Get Started?">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum
-          suspendisse
-        </PageLine>
+        ></iframe> */}
       </div>
       <div>
         <FormUseHook></FormUseHook>

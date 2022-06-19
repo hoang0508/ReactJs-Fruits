@@ -7,7 +7,7 @@ const SignInPage = lazy(() => import("Pages/SignInPage.js"));
 const SignUpPage = lazy(() => import("Pages/SignUpPage.js"));
 const Footer = lazy(() => import("../components/Footer/Footer"));
 const Header = lazy(() => import("../components/Header/Header"));
-const Topdown = lazy(() => import("../components/Topdown/Topdown"));
+const Topdown = lazy(() => import(".../components/Topdown/Topdown"));
 const Cartpage = lazy(() => import("../Pages/Cartpage/Cartpage.js"));
 const Detailpage = lazy(() => import("../Pages/Detailpage/Detailpage.js"));
 const HomePage = lazy(() => import("../Pages/HomePage.js"));

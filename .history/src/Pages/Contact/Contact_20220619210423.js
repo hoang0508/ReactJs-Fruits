@@ -57,7 +57,7 @@ const Contact = () => {
           allowfullscreen
         ></iframe>
       </div>
-      <div className="mt-4">
+      <div>
         <PageLine heading="Ready To Get Started?">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum

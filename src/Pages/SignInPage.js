@@ -14,7 +14,6 @@ import { useNavigate } from "react-router";
 import { signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
 import { auth } from "Firebase-app/Firebase-config";
 import { GoogleAuthProvider } from "firebase/auth";
-import { async } from "@firebase/util";
 const schema = yup.object({
   email: yup
     .string()
@@ -101,15 +100,18 @@ const SignInPage = () => {
             )}
           </Input>
         </Field>
-        <Button
-          type={"submit"}
-          maxWidth="200px"
-          height="56px"
-          className="button button--primary"
-          isLoading={isSubmitting}
-        >
-          Sign In
-        </Button>
+        <div>
+          <Button
+            type={"submit"}
+            maxWidth="200px"
+            height="56px"
+            className="button button--primary"
+            isLoading={isSubmitting}
+          >
+            Sign In
+          </Button>
+        </div>
+
         <button onClick={handleSignInGoogle}>SignIn google</button>
       </form>
     </Authentication>

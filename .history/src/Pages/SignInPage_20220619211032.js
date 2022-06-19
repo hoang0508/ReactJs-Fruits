@@ -45,7 +45,8 @@ const SignInPage = () => {
   });
   useEffect(() => {
     document.title = "Sign In Page";
-  }, []);
+    if (userInfo?.email) navigate("/");
+  }, [navigate, userInfo?.email]);
   const handleSignIn = async (values) => {
     if (!isValid) return;
     await signInWithEmailAndPassword(auth, values.email, values.password);
@@ -54,10 +55,11 @@ const SignInPage = () => {
     toast.success("SignIn Successfully!!!");
   };
   // Google
-  const SignInGoogle = () => {
+  const handleSignInGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
-    navigate("/");
+    await signInWithRedirect(auth, provider);
+    if (userInfo?.email) navigate("/");
+    toast.success("Sign In google successfully!!!");
   };
   // error, toastify
   useEffect(() => {
@@ -98,15 +100,19 @@ const SignInPage = () => {
             )}
           </Input>
         </Field>
-        <Button
-          type={"submit"}
-          maxWidth="200px"
-          height="56px"
-          className="button button--primary"
-          isLoading={isSubmitting}
-        >
-          Sign In
-        </Button>
+        <div>
+          <Button
+            type={"submit"}
+            maxWidth="200px"
+            height="56px"
+            className="button button--primary"
+            isLoading={isSubmitting}
+          >
+            Sign In
+          </Button>
+        </div>
+
+        <button onClick={handleSignInGoogle}>SignIn google</button>
       </form>
     </Authentication>
   );
