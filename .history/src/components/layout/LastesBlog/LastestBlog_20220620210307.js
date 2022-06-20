@@ -98,23 +98,19 @@ const dataBlog = [
 const LastestBlog = ({ heading, dataHome }) => {
   let start = 0;
   let end = 3;
-
-  const sliceStart = dataHome ? start : 0;
-  const sliceEnd = dataHome ? end : 12;
+  const slice = dataHome ? (start, end) : "";
   return (
     <section className="LastestBlog">
-      {heading && (
-        <PageLine heading={heading}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum
-          suspendisse
-        </PageLine>
-      )}
+      <PageLine heading={heading}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua quis ipsum
+        suspendisse
+      </PageLine>
       <div className="container">
         <div className="LastestBlog-list">
           {dataBlog &&
             dataBlog.length > 0 &&
-            dataBlog.slice(sliceStart, sliceEnd).map((item) => (
+            dataBlog.slice(slice).map((item) => (
               <div className="LastestBlog-item" key={item.id}>
                 <div className="LastestBlog-images">
                   <img src={item.images} alt="" />

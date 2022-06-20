@@ -98,9 +98,8 @@ const dataBlog = [
 const LastestBlog = ({ heading, dataHome }) => {
   let start = 0;
   let end = 3;
-
-  const sliceStart = dataHome ? start : 0;
-  const sliceEnd = dataHome ? end : 12;
+  const sliceStart = dataHome ? start : "";
+  const sliceEnd = dataHome ? end : "";
   return (
     <section className="LastestBlog">
       {heading && (
