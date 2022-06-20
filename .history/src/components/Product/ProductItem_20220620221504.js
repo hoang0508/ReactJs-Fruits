@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router";
 import ModalProduct from "../Modal/ModalProduct";
 const ProductItem = ({ item }) => {
+  console.log("🚀 ~ file: ProductItem.js ~ line 13 ~ ProductItem ~ item", item);
   const [urlM, setUrlM] = useState(
     `https://6252eca769af39728b54c940.mockapi.io/fruits/v1/products`
   );
@@ -39,11 +40,8 @@ const ProductItem = ({ item }) => {
   };
   // useContext
   const { addToCart, count } = useAuthContext();
-  console.log(
-    "🚀 ~ file: ProductItem.js ~ line 42 ~ ProductItem ~ count",
-    count
-  );
   const handleAddToCart = (item) => {
+    item.count = count;
     addToCart(item);
   };
   return (

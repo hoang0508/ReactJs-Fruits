@@ -44,6 +44,10 @@ const ProductItem = ({ item }) => {
     count
   );
   const handleAddToCart = (item) => {
+    console.log(
+      "🚀 ~ file: ProductItem.js ~ line 43 ~ handleAddToCart ~ item",
+      item
+    );
     addToCart(item);
   };
   return (

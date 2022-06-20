@@ -47,10 +47,11 @@ const AuthProvider = ({ images, children, totalValues, ...props }) => {
   // Add to Cart
   const addToCart = (newItem) => {
     setCartItem((prevItem) => {
-      newItem.count = count || 1;
+      newItem.count = count;
       newItem.total = total;
       const isExisted = prevItem.some((item) => item.id === newItem.id);
-      const totalValue = +newItem.priceNew * count;
+      const totalValue =
+        +newItem.priceNew * +newItem.count || +newItem.priceNew;
       setTotal(totalValue);
 
       if (isExisted) {
@@ -58,8 +59,7 @@ const AuthProvider = ({ images, children, totalValues, ...props }) => {
         prevItem.count = count + 1;
         prevItem.total = total;
         let itemPriceNew = prevItem.map((item) => item.priceNew);
-        const totalValue =
-          +itemPriceNew * +prevItem.count || +newItem.priceNew * count;
+        const totalValue = +itemPriceNew * +prevItem.count || +newItem.priceNew;
         setTotal(totalValue);
         return [...prevItem];
       }

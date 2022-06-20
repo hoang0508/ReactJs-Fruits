@@ -31,6 +31,7 @@ const Button = ({
   className = "",
   maxWidth = "",
   height = "",
+  style = "",
   onClick = () => {},
   ...props
 }) => {

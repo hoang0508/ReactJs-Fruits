@@ -39,11 +39,11 @@ const ProductItem = ({ item }) => {
   };
   // useContext
   const { addToCart, count } = useAuthContext();
-  console.log(
-    "🚀 ~ file: ProductItem.js ~ line 42 ~ ProductItem ~ count",
-    count
-  );
   const handleAddToCart = (item) => {
+    console.log(
+      "🚀 ~ file: ProductItem.js ~ line 43 ~ handleAddToCart ~ item",
+      item
+    );
     addToCart(item);
   };
   return (

@@ -45,8 +45,16 @@ const HeaderNav = () => {
     };
   }, []);
   const { cartItem } = useAuthContext();
+  console.log(
+    "🚀 ~ file: HeaderNav.js ~ line 48 ~ HeaderNav ~ cartItem",
+    cartItem
+  );
   const numberCart =
-    cartItem && cartItem.length > 0 && cartItem.map((item) => item).length;
+    cartItem && cartItem.length > 0 && cartItem.map((item) => item);
+  console.log(
+    "🚀 ~ file: HeaderNav.js ~ line 53 ~ HeaderNav ~ numberCart",
+    numberCart
+  );
   return (
     <div className="header-nav" ref={navbar}>
       <div className="container">
@@ -67,7 +75,7 @@ const HeaderNav = () => {
           </ul>
           <div className="header-cart">
             <FaCartPlus className="header-cart--icon" />
-            <span className="header-cart--number">{numberCart || 0}</span>
+            <span className="header-cart--number">0</span>
           </div>
         </div>
       </div>

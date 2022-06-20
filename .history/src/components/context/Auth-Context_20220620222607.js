@@ -50,7 +50,8 @@ const AuthProvider = ({ images, children, totalValues, ...props }) => {
       newItem.count = count || 1;
       newItem.total = total;
       const isExisted = prevItem.some((item) => item.id === newItem.id);
-      const totalValue = +newItem.priceNew * count;
+      const totalValue =
+        newItem.count === 1 ? +newItem.priceNew : +newItem.priceNew * count;
       setTotal(totalValue);
 
       if (isExisted) {

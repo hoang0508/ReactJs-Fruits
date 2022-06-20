@@ -31,6 +31,7 @@ const Button = ({
   className = "",
   maxWidth = "",
   height = "",
+  style = "",
   onClick = () => {},
   ...props
 }) => {
@@ -45,7 +46,7 @@ const Button = ({
           height={height}
           className={className}
           onClick={onClick}
-          {...props}
+          style={style}
         >
           {isLoading ? <div className="loading"></div> : children}
         </ButtonStyles>

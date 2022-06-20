@@ -67,9 +67,12 @@ const Cartpage = () => {
             <span style={{ display: "flex" }}>Total:</span>
             <div>${totalReducer}.00</div>
           </div>
-          <button className="flex mt-[20px] py-3 px-5 bg-orange-600 text-white ml-auto">
+          <Button
+            style={{ display: "flex", justifyContent: "flex-end" }}
+            className="flex mt-[20px]"
+          >
             Thanh toán giỏ hàng
-          </button>
+          </Button>
         </div>
       </div>
     </div>

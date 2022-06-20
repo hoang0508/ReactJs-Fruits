@@ -67,7 +67,7 @@ const HeaderNav = () => {
           </ul>
           <div className="header-cart">
             <FaCartPlus className="header-cart--icon" />
-            <span className="header-cart--number">{numberCart || 0}</span>
+            <span className="header-cart--number">{numberCart}</span>
           </div>
         </div>
       </div>

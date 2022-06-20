@@ -36,6 +36,7 @@ const Button = ({
 }) => {
   const { isLoading, to } = props;
   console.log("🚀 ~ file: Button.js ~ line 38 ~ props", props);
+  console.log(onClick);
   if (typeof to === "string") {
     return (
       <NavLink to={to}>

@@ -8,9 +8,9 @@ const ButtonStyles = styled.button`
   margin: 0 auto;
   max-width: ${(props) => props.maxWidth};
   height: ${(props) => props.height};
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   .loading {
     width: 35px;
     height: 35px;

@@ -47,10 +47,10 @@ const AuthProvider = ({ images, children, totalValues, ...props }) => {
   // Add to Cart
   const addToCart = (newItem) => {
     setCartItem((prevItem) => {
-      newItem.count = count || 1;
+      newItem.count = count;
       newItem.total = total;
       const isExisted = prevItem.some((item) => item.id === newItem.id);
-      const totalValue = +newItem.priceNew * count;
+      const totalValue = +newItem.priceNew * count || +newItem.priceNew * count;
       setTotal(totalValue);
 
       if (isExisted) {

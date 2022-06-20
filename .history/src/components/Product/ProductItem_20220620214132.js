@@ -38,14 +38,7 @@ const ProductItem = ({ item }) => {
     navigate(`/detail/${item.id}`);
   };
   // useContext
-  const { addToCart, count } = useAuthContext();
-  console.log(
-    "🚀 ~ file: ProductItem.js ~ line 42 ~ ProductItem ~ count",
-    count
-  );
-  const handleAddToCart = (item) => {
-    addToCart(item);
-  };
+  const { addToCart } = useAuthContext();
   return (
     <>
       <div className="product-item" ref={modalRef}>
@@ -58,7 +51,7 @@ const ProductItem = ({ item }) => {
           <div className="product-select">
             <span
               className="product-select--icon"
-              onClick={() => handleAddToCart(item)}
+              onClick={() => addToCart(item)}
             >
               <FaCartPlus />
             </span>
